@@ -1,3 +1,4 @@
+{% load static %}
 <!--START SCROLL TOP BUTTON -->
 <a class="scrollToTop" href="#">
     <i class="fa fa-angle-up"></i>
@@ -19,11 +20,12 @@
 
         <!-- LOGO -->       
 
-         <!--  Text based logo  -->
+         <!--  Text based logo 
         <a class="navbar-brand" href="index.html">EABC<span>L</span></a> 
+         -->
 
             <!--  Image based logo  -->
-        <!-- <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo img"></a>  -->
+        <a class="navbar-brand" href="index.html"><img src="{%static  'img/logo.jpg' %}" alt="Logo img"></a>  
        
 
       </div>
