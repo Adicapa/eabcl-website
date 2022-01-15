@@ -1,19 +1,37 @@
 from django.shortcuts import render
+from products.models import Products, ProductImage
 
-# Create your views here.
+
 def home(request):
-    return render(request, 'index.html', {})
+    # retrive all products from database
+    products = Products.objects.all()
+    product_images = ProductImage.objects.all()
+    # filter the only 5 categories we need
+    insecticides = []
+    fertilizers = []
+    herbicides = []
+    fungicides= []
+    for product in products:
+        if product.category.name == 'Insecticides':
+            insecticides.append(product)
 
-def payment(request):
-    key = settings.STRIPE_PUBLISHABLE_KEY
-    order_qs = order.objects.filter (user= request.user, ordered=False)
-    order_total = order_qs[0].get_totals()
-    totalcents = float(order_total * 100);
-    total = round(totalcents, 2)
-    if request.method ==  'POST':
-        charge = stripe.Charge.create(amount=total,
-            currency='inr',
-            description=order_qs,
-            source=request.POST['stripeToken'])
-        print(charge)
-    return render(request, 'checkout/payment.html', {"key": key, "total": total})
+        if product.category.name == 'Fertilizers':
+            fertilizers.append(product)
+
+        if product.category.name == 'Herbicides':
+            herbicides.append(product)
+
+        if product.category.name == 'Fungicides':
+            fungicides.append(product)
+
+    
+    # compose and return the data
+    return_payload = {
+        'fertizers': fertilizers,
+        'fungicides': fungicides,
+        'herbicides': herbicides,
+        'insecticides': insecticides,
+        'product_images': product_images,
+        
+    }
+    return render(request, 'index.html', return_payload)

@@ -16,14 +16,14 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
+db.sqlite3
 # =========================
 # Operating System Files
 # =========================
 
 # OSX
 # =========================
-
+venv
 .DS_Store
 .AppleDouble
 .LSOverride

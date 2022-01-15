@@ -25,13 +25,13 @@
          -->
 
             <!--  Image based logo  -->
-        <a class="navbar-brand" href="index.html"><img src="{%static  'img/logo.jpg' %}" alt="Logo img"></a>  
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{%static  'img/logo.jpg' %}" alt="Logo img"></a>  
        
 
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
-          <li><a href="index.html">HOME</a></li>
+          <li><a href="{% url 'home' %}">HOME</a></li>
           <li><a href="#mu-about-us">ABOUT US</a></li>                       
           <li><a href="#mu-restaurant-menu">PRODUCTS</a></li>                                           
           <li><a href="#mu-gallery">GALLERY</a></li>

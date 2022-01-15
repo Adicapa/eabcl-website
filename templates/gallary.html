@@ -14,57 +14,15 @@
             
               <!-- Start gallery image -->
               <div class="mu-gallery-body">
-                <!-- start single gallery image -->
-                <div class="mu-single-gallery col-md-4">
-                    <div class="mu-single-gallery-item">
-	                    <figure class="mu-single-gallery-img">
-	                      <a class="mu-imglink" href="{% static  'img/gallery/1.jpg' %}">
-                          <img alt="img" src="{% static  'img/gallery/1.jpg' %}">
-                           <div class="mu-single-gallery-info">
-                              <img class="mu-view-btn" src="{% static 'img/plus.png' %}" alt="plus icon img">
-                          </div> 
-                        </a>
-	                    </figure>            
-                  	</div>
-                </div>
-                <!-- End single gallery image -->
+                
 
                 <!-- start single gallery image -->
-                <div class="mu-single-gallery col-md-4">
-                  	 <div class="mu-single-gallery-item">
-                        <figure class="mu-single-gallery-img">
-                          <a class="mu-imglink" href="{% static  'img/gallery/2.jpg' %}">
-                            <img alt="img" src="{% static 'img/gallery/2.jpg' %}">
-                             <div class="mu-single-gallery-info">
-                                <img class="mu-view-btn" src="{% static 'img/plus.png' %}" alt="plus icon img">
-                            </div> 
-                          </a>
-                        </figure>            
-                    </div>
-                </div>               
-                <!-- End single gallery image -->
-
-                <!-- start single gallery image -->
-                <div class="mu-single-gallery col-md-4">                  
-                  	 <div class="mu-single-gallery-item">
-                      <figure class="mu-single-gallery-img">
-                        <a class="mu-imglink" href="{% static  'img/gallery/3.jpg' %}">
-                          <img alt="img" src="{% static 'img/gallery/3.jpg' %}">
-                           <div class="mu-single-gallery-info">
-                              <img class="mu-view-btn" src="{% static 'img/plus.png' %}" alt="plus icon img">
-                          </div> 
-                        </a>
-                      </figure>            
-                    </div>
-                </div>               
-                <!-- End single gallery image -->
-
-                <!-- start single gallery image -->
+                {% for product_image in product_images %}
                 <div class="mu-single-gallery col-md-4">                  
                   	<div class="mu-single-gallery-item">
                       <figure class="mu-single-gallery-img">
-                        <a class="mu-imglink" href="{% static 'img/gallery/4.jpg' %}">
-                          <img alt="img" src="{% static 'img/gallery/4.jpg' %}">
+                        <a class="mu-imglink" href="{{product_image.image.url}}">
+                          <img alt="img" src="{{product_image.image.url}}">
                            <div class="mu-single-gallery-info">
                               <img class="mu-view-btn" src="{% static 'img/plus.png' %}" alt="plus icon img">
                           </div> 
@@ -72,83 +30,9 @@
                       </figure>            
                     </div>
                 </div>
+                {% endfor %}
                 <!-- End single gallery image -->
-
-                <!-- start single gallery image -->
-                <div class="mu-single-gallery col-md-4">                  
-                  	<div class="mu-single-gallery-item">
-                      <figure class="mu-single-gallery-img">
-                        <a class="mu-imglink" href="{% static 'img/gallery/5.jpg' %}">
-                          <img alt="img" src="{% static 'img/gallery/5.jpg' %}">
-                           <div class="mu-single-gallery-info">
-                              <img class="mu-view-btn" src="{% static 'img/plus.png' %}" alt="plus icon img">
-                          </div> 
-                        </a>
-                      </figure>            
-                    </div>
-                </div>               
-                <!-- End single gallery image -->  
-
-                <!-- start single gallery image -->
-                <div class="mu-single-gallery col-md-4">                  
-                   <div class="mu-single-gallery-item">
-                      <figure class="mu-single-gallery-img">
-                        <a class="mu-imglink" href="{% static 'img/gallery/6.jpg' %}">
-                          <img alt="img" src="{% static 'img/gallery/6.jpg' %}">
-                           <div class="mu-single-gallery-info">
-                              <img class="mu-view-btn" src="{% static 'img/plus.png' %}" alt="plus icon img">
-                          </div> 
-                        </a>
-                      </figure>            
-                    </div>
-                </div>
-                <!-- End single gallery image -->
-
-                <!-- start single gallery image -->
-                <div class="mu-single-gallery col-md-4">                  
-                  	<div class="mu-single-gallery-item">
-                      <figure class="mu-single-gallery-img">
-                        <a class="mu-imglink" href="{% static 'img/gallery/7.jpg' %}">
-                          <img alt="img" src="{% static 'img/gallery/7.jpg' %}">
-                           <div class="mu-single-gallery-info">
-                              <img class="mu-view-btn" src="{% static 'img/plus.png' %}" alt="plus icon img">
-                          </div> 
-                        </a>
-                      </figure>            
-                    </div>
-                </div>               
-                <!-- End single gallery image -->
-
-                <!-- start single gallery image -->
-                <div class="mu-single-gallery col-md-4">                  
-                  	<div class="mu-single-gallery-item">
-                      <figure class="mu-single-gallery-img">
-                        <a class="mu-imglink" href="{% static  'img/gallery/8.jpg' %}">
-                          <img alt="img" src="{% static  'img/gallery/8.jpg' %}">
-                           <div class="mu-single-gallery-info">
-                              <img class="mu-view-btn" src="{% static  'img/plus.png' %}" alt="plus icon img">
-                          </div> 
-                        </a>
-                      </figure>            
-                    </div>
-                </div>               
-                <!-- End single gallery image -->
-
-                <!-- start single gallery image -->
-                <div class="mu-single-gallery col-md-4">                  
-                  	<div class="mu-single-gallery-item">
-                      <figure class="mu-single-gallery-img">
-                        <a class="mu-imglink" href="{% static  'img/gallery/9.jpg' %}">
-                          <img alt="img" src="{% static  'img/gallery/9.jpg' %}">
-                           <div class="mu-single-gallery-info">
-                              <img class="mu-view-btn" src="{% static  'img/plus.png' %}" alt="plus icon img">
-                          </div> 
-                        </a>
-                      </figure>            
-                    </div>
-                </div>
-                <!-- End single gallery image -->  
-
+                           
               </div>
             </div>
           </div>
