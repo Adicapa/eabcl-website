@@ -9,7 +9,7 @@ class Category(models.Model):
 
 class Products(models.Model):
     name = models.CharField(max_length=300)
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=40)
     category = models.ForeignKey('category', on_delete=models.CASCADE)
     preview_text = models.TextField(max_length=200, verbose_name='Preview Text')
     detail_text = models.TextField(max_length=1000, verbose_name='Detail Text')
@@ -20,4 +20,5 @@ class Products(models.Model):
     
 class ProductImage(models.Model):
     image = models.ImageField(upload_to='products/', blank=True)
-    product = models.ForeignKey('products', on_delete=models.CASCADE)
+    
+
