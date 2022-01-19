@@ -5,6 +5,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=300)
     description = models.CharField(max_length=300)
+    image = models.ImageField(upload_to='products/', blank=True)
     
 
 class Products(models.Model):
@@ -14,6 +15,7 @@ class Products(models.Model):
     preview_text = models.TextField(max_length=200, verbose_name='Preview Text')
     detail_text = models.TextField(max_length=1000, verbose_name='Detail Text')
     price = models.FloatField()
+    image = models.ImageField(upload_to='menue/', blank=True)
     
     def __self__(self):
         return self.name
